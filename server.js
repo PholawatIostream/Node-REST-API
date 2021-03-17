@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 
-const DATABASE_URL = process.env.DATABASE_URL || "mongodb+srv://admin:<0948454068>@cluster0.guvx5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const DATABASE_URL = process.env.DATABASE_URL || "mongodb+srv://admin:0948454068@cluster0.guvx5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const db = mongoose.connection
@@ -16,4 +16,4 @@ app.use(express.json())
 const subscribersRouter = require('./routes/subscribers')
 app.use('/subscribers', subscribersRouter)
 
-app.listen(3000, () => console.log('Server Started'))
+app.listen(6000, () => console.log('Server Started'))
